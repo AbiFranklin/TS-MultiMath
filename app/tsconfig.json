@@ -2,7 +2,9 @@
   "extends": "../tsconfig",
   "compilerOptions": {
     "removeComments": true,
-    "outFile": "../js/app.js"
+    "module": "commonjs",
+    "moduleResolution": "node", //technically not needed since common js defaults to node, but needed if using es2015 & others
+    "traceResolution": true,
   },
   "files": ["./app.ts"]
 }

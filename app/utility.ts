@@ -1,6 +1,12 @@
-class Utility {
-    static getInputVariable (elementID: string): string {
-        const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById(elementID);
-        return inputElement.value;
-    }
+function getInputVariable(elementID: string): string {
+  const inputElement: HTMLInputElement = <HTMLInputElement>(
+    document.getElementById(elementID)
+  );
+  return inputElement.value;
 }
+
+function logger(message: string): void {
+  console.log(message);
+}
+
+export { getInputVariable as getValue, logger };
