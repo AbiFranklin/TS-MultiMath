@@ -15,7 +15,11 @@ export class Scoreboard {
 
     for (let i = 0; i < this.results.length; i++) {
       const result: Result = this.results[i];
-      output += `<h4> ${result.playerName} : ${result.score} / ${result.problemCount} for factor ${result.factor} </h4>`;
+      if (result.totalTime !== null) {
+      output += `<h4> ${result.playerName} : ${result.score} / ${result.problemCount} for factor ${result.factor} in ${result.totalTime} seconds </h4>`;
+      } else {
+        output += `<h4> ${result.playerName} : ${result.score} / ${result.problemCount} for factor ${result.factor}</h4>`;
+      }
     }
 
     const scoresElement: HTMLElement = document.getElementById("scores")!;

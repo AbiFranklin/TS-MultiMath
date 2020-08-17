@@ -1,20 +1,38 @@
 import { Player } from "./player";
-import { Game } from "./game";
+import { GameOne, GameTwo } from "./game";
 import { getValue } from "./utility";
 
-let newGame: Game;
+let newGameOne: GameOne;
+let newGameTwo: GameTwo;
 
-document.getElementById("startGame")!.addEventListener("click", () => {
-  const player: Player = new Player();
-  player.name = getValue("playername");
+if (document.getElementById("startGame")) {
+  document.getElementById("startGame")!.addEventListener("click", () => {
+    const player: Player = new Player();
+    player.name = getValue("playername");
 
-  const problemCount: number = Number(getValue("problemCount"));
-  const factor: number = Number(getValue("factor"));
+    const problemCount: number = Number(getValue("problemCount"));
+    const factor: number = Number(getValue("factor"));
 
-  newGame = new Game(player, problemCount, factor);
-  newGame.displayGame();
-});
+    newGameOne = new GameOne(player, problemCount, factor);
+    newGameOne.displayGame();
+  });
+} else {
+  document.getElementById("startGameTwo")!.addEventListener("click", () => {
+    const player: Player = new Player();
+    player.name = getValue("playername");
+
+    const problemCount: number = Number(getValue("problemCount"));
+    const factor: number = Number(getValue("factor"));
+
+    newGameTwo = new GameTwo(player, problemCount, factor, []);
+    newGameTwo.displayGame();
+  });
+}
 
 document.getElementById("calculate")!.addEventListener("click", () => {
-  newGame.calculateScore();
+  if (document.getElementById('startGame')) {
+    newGameOne.calculateScore();
+  } else {
+    newGameTwo.calculateScore();
+  }
 });
