@@ -11,14 +11,14 @@ export class Scoreboard {
   }
 
   updateScoreboard(): void {
-    let output: string = "<h2>Scoreboard</h2>";
+    let output: string = "";
 
     for (let i = 0; i < this.results.length; i++) {
       const result: Result = this.results[i];
       if (result.totalTime !== null) {
-      output += `<h4> ${result.playerName} : ${result.score} / ${result.problemCount} for factor ${result.factor} in ${result.totalTime} seconds </h4>`;
+      output += `${result.playerName} : ${result.score} / ${result.problemCount} for factor ${result.factor} in ${result.totalTime} seconds`;
       } else {
-        output += `<h4> ${result.playerName} : ${result.score} / ${result.problemCount} for factor ${result.factor}</h4>`;
+        output += `${result.playerName} : ${result.score} / ${result.problemCount} for factor ${result.factor}`;
       }
     }
 

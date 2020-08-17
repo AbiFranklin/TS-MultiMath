@@ -27,12 +27,14 @@
       </div>
     </nav>
     <div class="container-fluid">
-      <div class="form-horizontal" id="nameform">
+      <div class="container-fluid">
+        <div class="row" style="display: flex;">
+      <div style="padding-left: 9%; width: 50%; display: flex; flex-direction: column;" id="nameform">
         <div class="form-group">
           <label for="playername" class="col-sm-2 control-label"
             >Player Name</label
           >
-          <div class="col-sm-2">
+          <div class="col-sm-4">
             <input
               type="text"
               class="form-control"
@@ -45,13 +47,12 @@
 
         <div class="form-group">
           <label for="factor" class="col-sm-2 control-label">Factor</label>
-          <div class="col-sm-2">
+          <div class="col-sm-4">
             <input
               type="text"
               class="form-control"
               id="factor"
               size="20"
-              value="5"
               placeholder="Factor"
             />
           </div>
@@ -61,7 +62,7 @@
           <label for="problemCount" class="col-sm-2 control-label"
             >Number of Problems</label
           >
-          <div class="col-sm-2">
+          <div class="col-sm-4">
             <input
               type="text"
               class="form-control"
@@ -78,6 +79,8 @@
           </div>
         </div>
       </div>
+      <h2 id="scores"></h2></div>
+      </div>
 
       <div
         class="form-horizontal"
@@ -88,11 +91,6 @@
       <button class="btn btn-success col-sm-offset-2" id="calculate" disabled>
         Calculate Score
       </button>
-
-      <div class="col-sm-offset-2 col-sm-10" id="scores">
-        <h2>Scoreboard</h2>
-        <h4 id="postedScores">No scores yet</h4>
-      </div>
 
       <div class="col-sm-offset-2 col-sm-10" id="messages"></div>
     </div>
